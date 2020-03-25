@@ -1,0 +1,19 @@
+import csv
+import numpy as np
+import pandas as pd
+import os
+from subprocess import check_output
+import matplotlib.pyplot as plt 
+import scipy.stats as st
+import seaborn as sns
+
+csv_file = "City_of_Seattle_Wages_by_Department.csv"
+
+sea_wage_df = pd.read_csv(csv_file)
+sea_wage_df.head()
+
+
+
+number_employees_male = sea_wage_df.groupby("Department").agg({"No. Male Empl":"sum"})
+number_employees_male
+
